@@ -1,0 +1,13 @@
+[
+    {
+      "name": "Pasta Carbonara",
+      "description": "A classic Italian pasta dish with bacon, eggs, and cheese.",
+      "image": "https://example.com/pasta.jpg"
+    },
+    {
+      "name": "Chicken Tikka Masala",
+      "description": "A flavorful Indian curry dish with tender chicken.",
+      "image": "https://example.com/chicken-tikka.jpg"
+    }
+  ]
+  
