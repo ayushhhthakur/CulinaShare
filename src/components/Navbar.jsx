@@ -18,10 +18,10 @@ const Navbar = () => {
                             <Link className="nav-link active" aria-current="page" to="/">Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/link">Link</Link>
+                            <Link className="nav-link" to="/favourites">Favourites</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to="/disabled">Disabled</Link>
+                            <Link className="nav-link" to="/about">About</Link>
                         </li>
                     </ul>
                     <Link to='/addrecipe'><button className="btn btn-primary">Add Recipie</button></Link>

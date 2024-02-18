@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom'; // Import Link from react-router-dom
 import { initializeApp } from 'firebase/app';
 import { getFirestore, collection, addDoc, getDocs } from 'firebase/firestore';
 import { getAnalytics } from 'firebase/analytics';
@@ -73,27 +74,35 @@ const Recipes = () => {
     };
 
     return (
-
-            <div className="container">
-                <div className="coloum">
-                    <div className="col-md-6">
-                        <h2 className="mb-4">Recipes</h2>
-                        <div className="row">
-                            {recipes.map(recipe => (
-                                <div className="col-md-6 mb-4" key={recipe.id}>
+        <div className="container">
+            <div className="column">
+                <div className="col-md-6">
+                    <h2 className="mb-4">Recipes</h2>
+                    <div className="row">
+                        {recipes.map(recipe => (
+                            <div className="col-md-6 mb-4" key={recipe.id}>
+                                <Link to={`/recipes/${recipe.id}`} style={{ textDecoration: 'none', color: 'inherit' }}> {/* Wrap card inside Link */}
                                     <div className="card">
                                         <img src={recipe.image} className="card-img-top" alt={recipe.name} />
                                         <div className="card-body">
                                             <h5 className="card-title">{recipe.name}</h5>
-                                            <p className="card-text">{recipe.description}</p>
+                                            <p className="card-text custom-text" style={{
+                                                display: '-webkit-box',
+                                                WebkitLineClamp: 2,
+                                                WebkitBoxOrient: 'vertical',
+                                                overflow: 'hidden',
+                                            }}>
+                                                {recipe.description}
+                                            </p>
                                         </div>
                                     </div>
-                                </div>
-                            ))}
-                        </div>
+                                </Link>
+                            </div>
+                        ))}
                     </div>
                 </div>
             </div>
+        </div>
     );
 }
 
